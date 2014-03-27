@@ -1,0 +1,36 @@
+'Phone'
+'James McNeil 19/03/2014'
+
+Public Class frmLogin
+
+    'Password For Phone
+    Private password = "Help"
+
+    'Contact Structure
+    Public Structure contact
+        Public contactName As String
+        Public contactNumber As String
+    End Structure
+
+    'List of Contacts
+    Public contactList As New ArrayList
+
+    'User Clicks login button
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+
+        Dim enterdWord As String
+
+        'Store into Text Box String
+        enterdWord = txtPassword.Text
+
+        'Compare Password, MsgBox if incorrect, go to main for if Correct
+        If (enterdWord = password) Then
+            Me.Hide()
+            frmMenu.Show()
+        Else
+            MsgBox("Incorrect Password")
+        End If
+
+    End Sub
+
+End Class
